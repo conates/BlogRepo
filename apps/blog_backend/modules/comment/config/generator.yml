@@ -1,0 +1,37 @@
+generator:
+  class: mpRealtyAdminDoctrineGenerator
+  param:
+    model_class:           Comment
+    theme:                 mpReality
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          comment
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: 
+        _new: 
+          credentials: [[Administrador, Editor, Autor, Colaborador]]
+        _edit: 
+          credentials: [[Administrador, Editor, Autor, Colaborador]]
+        _delete: 
+          credentials: [[Administrador]]
+      fields:  
+        name:           { label: Nombre}
+        comment:        { label: Comentario}
+        state:          { label: Estado}
+        user_id:        { label: Usuario}
+        created_at:     { label: Fecha de Creación}
+        updated_at:     { label: Última actualización}
+      list:    
+        title: Lista de Comentarios
+      filter:  ~
+      form:    ~
+      edit:    
+        title: Editando Comentario %%name%%
+      new:     
+        title: Nuevo Comentario
+      show:    ~

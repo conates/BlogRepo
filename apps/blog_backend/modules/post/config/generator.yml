@@ -1,0 +1,47 @@
+generator:
+  class: mpRealtyAdminDoctrineGenerator
+  param:
+    model_class:           Post
+    theme:                 mpReality
+    non_verbose_templates: true
+    with_show:             true
+    singular:              ~
+    plural:                ~
+    route_prefix:          post
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+    
+    config:
+      actions: 
+        _new: 
+          credentials: [[Administrador,Autor, Colaborador]]
+        _edit: 
+          credentials: [[Administrador,Editor,Autor,Colaborador]]
+        _delete: 
+          credentials: [[Administrador]]
+      fields:  
+        title:            { label: Título}
+        content:          { label: Contenido}
+        date:             { label: Fecha}
+        state:            { label: Estado}
+        tags_list:        { label: Lista de Etiquetas}
+        categories_list:  { label: Lista de Categorías}
+        user_id:          { label: Autor}
+        created_at:       { label: Fecha de Creación}
+        updated_at:       { label: Última actualización}
+      list:    
+        title: Lista de Post
+        display: [title, user_id,state, categories_list, tags_list, date, Comentarios]
+      filter:  ~
+      form:    
+      edit:    
+        redirection: list
+        title: Editar Post %%slug%%
+      new:     
+        redirection: list
+        title: Nuevo Post
+      show:    ~
+#      export:
+#        enabled: true
+#        title: Post export
+#        filename: exportation

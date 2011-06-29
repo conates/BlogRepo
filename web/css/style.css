@@ -1,0 +1,120 @@
+body {margin:0;padding:0;background-color: #eee;}
+a {color:#466773;}.clear {clear:both;}
+#container {background: none repeat scroll 0 0 transparent;width: 100%;}
+
+
+/*************** Header*************/
+#header {overflow: hidden;background-image: url(../images/bg-header2.jpg) !important;background-repeat: repeat-x;height:100px !important;}
+#head_wrap {margin-left: auto;margin-right: auto;overflow: hidden;padding-top: 2%;width: 960px;height:86%; position: relative;}
+#head_wrap h2.user_login {background: url("../images/user_login.png") no-repeat left center;padding-left:40px;bottom: 20px;margin: 0;padding-left: 40px;position: absolute;}
+#logo {display: inline;float: left;margin-right: 10px;position: relative;width: 400px;}
+#logo h1 {margin: 0;}
+#logo h1 a {color: #F1F1F1;font-family: Tahoma,Geneva,sans-serif;font-size: 36px;font-weight: bold;letter-spacing: -3px;margin: 0;text-decoration: none;}
+
+/*************** Login Holder *************/
+#login-holder {margin: 15px auto 50px;overflow: hidden;padding-bottom: 0px !important;padding-top: 5px !important;width: 300px;}
+#login-holder .bloc_field {margin-bottom:20px;overflow:hidden;}
+#login-holder .bloc_field.password_bloc {margin-bottom:3px;}
+
+
+/*************** Required field *************/
+.error {
+    background: url("../images/error.png") no-repeat 0 0 transparent;padding: 10px 8px 7px 27px;margin: 3px 0;background-color: #FCC;border: 1px solid #F00;font-family: arial;font-size: 10px;font-style: normal;font-weight: normal;color: #000;float: left;width: 86%;-moz-border-radius:5px;-webkit-border-radius: 5px;border-radius:5px;}
+#sf_admin_container .title{border-bottom: 2px solid #CCCCCC;margin-bottom: 30px;padding-bottom: 10px;margin-top:-50px;position: relative;z-index: 1}
+#header #controlpanel ul li a.home {color:#fff;background: url(../images/home.png) no-repeat left center; padding-left: 30px; text-decoration:none;}
+#header #controlpanel ul li a.tag {color:#fff;background: url(../images/tag.png) no-repeat left center; padding-left: 30px; text-decoration:none;}
+#header #controlpanel ul li a.post {color:#fff;background: url(../images/post.png) no-repeat left center; padding-left: 30px; text-decoration:none;}
+#header #controlpanel ul li a.categories {color:#fff;background: url(../images/categories.png) no-repeat left center; padding-left: 30px; text-decoration:none;}
+#header #controlpanel ul li a.comment {color:#fff;background: url(../images/comment2.png) no-repeat left center; padding-left: 30px; text-decoration:none;}
+#header #controlpanel ul li a.user {color:#fff;background: url(../images/user.png) no-repeat left center; padding-left: 30px; text-decoration:none;}
+#header #controlpanel ul li a.groups {color:#fff;background: url(../images/groups.png) no-repeat left center; padding-left: 30px; text-decoration:none;}
+#header #controlpanel ul li a.blog {color:#fff;background: url(../images/blog.png) no-repeat left center; padding-left: 30px; text-decoration:none;}
+
+form input[type="text"]:hover, form input[type="password"]:hover, form textarea:hover {
+    box-shadow: #999999;
+    color: #1787e5;
+    background-color: #b2cde3;
+    outline:none;
+    transition: all 0.25s ease-in-out;
+    -webkit-transition: all 0.25s ease-in-out;
+    -moz-transition: all 0.25s ease-in-out;
+}
+form input[type="text"], form input[type="password"], form textarea {
+    outline:none;
+    transition: all 0.25s ease-in-out;
+    -webkit-transition: all 0.25s ease-in-out;
+    -moz-transition: all 0.25s ease-in-out;
+    border-radius:3px;
+    -webkit-border-radius:3px;
+    -moz-border-radius:3px;
+    border:1px solid rgba(0,0,0, 0.2);
+}
+form input[type="text"]:focus, form input[type="password"]:focus, form textarea:focus {
+    box-shadow: 5px #B3E2FF;
+    -webkit-box-shadow: 5px #B3E2FF; 
+    -moz-box-shadow: 5px #B3E2FF;
+    border-color: rgba(82, 168, 236, 0.75) !important; 
+}
+
+.notice{ 
+    background: url("../images/error.png") no-repeat scroll 0 0 #b2cde3;
+    border: 1px solid #FF0000;
+    border-radius: 5px 5px 5px 5px;
+    color: #000000;
+    float: left;
+    font-family: arial;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: normal;
+    margin: 3px 0;
+    padding: 10px 8px 7px 27px;
+    width: 97%;
+}
+.error{
+    background: url("../images/error.png") no-repeat scroll 0 0 #FFCCCC;
+    border: 1px solid #FF0000;
+    border-radius: 5px 5px 5px 5px;
+    color: #000000;
+    float: left;
+    font-family: arial;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: normal;
+    margin: 3px 0;
+    padding: 10px 8px 7px 27px;
+    width: 97%;
+}
+.post-count-wrapper{
+    float: right;
+    margin-left: -16px;
+    position: absolute;
+}
+#error404{
+    margin: 0 auto;
+    position: relative;
+    text-align: left;
+    width: 100%;    
+    height: 100%;
+    padding-bottom: 120px;
+    background-color: #FFFFFF;
+}
+#error500{
+    margin: 0 auto;
+    position: relative;
+    text-align: left;
+    width: 100%;    
+    height: 100%;
+    background-color: #000000;
+}
+#secure{
+    margin: 0 auto;
+    position: relative;
+    text-align: center;
+}
+#form-secure{
+    margin: 0 auto;
+    position: relative;
+    text-align: center;
+    width: 400px;
+
+}

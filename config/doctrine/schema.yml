@@ -1,0 +1,114 @@
+options:
+  collate: utf8_unicode_ci
+  charset: utf8
+
+
+Post:
+  actAs:
+    Timestampable: ~
+    Searchable: { unique: true, fields: [title,content,state], canUpdate: true }
+    Sluggable:  { unique: true, fields: [title], canUpdate: true }
+  columns:
+    id:                   { type: integer(8), autoincrement: true, primary: true }
+    title:                { type: string(150), notnull: true }
+    content:              { type: string(50000), notnull: true }
+    date:                 { type: timestamp, notnull: true } 
+    state:                { type: enum, values: ['Publicado','Borrador', 'Pendiente']}
+    user_id:              { type: integer(4), notnull: false }
+  attributes: { export: all,  validate: true }
+
+Comment:
+  actAs:
+    Timestampable: ~
+  columns:
+    id:                   { type: integer(8), autoincrement: true, primary: true }
+    name:                 { type: string(150), notnull: true }
+    email:                { type: string(150), notnull: true }    
+    url:                  { type: string(150), notnull: true }    
+    comment:              { type: string(1000), notnull: true }
+    state:                { type: enum, values: ['Publicado','Pendiente']}
+    user_id:              { type: integer(4), notnull: true }
+    post_id:              { type: integer(8), notnull: true }
+  relations: 
+    Post: { foreignAlias: Comments }
+    
+Tag:
+  columns:
+    id:                   { type: integer(8), autoincrement: true, primary: true }
+    name:                 { type: string(150), notnull: true }
+    description:          { type: string(1000), notnull: false }
+  relations: 
+    Posts: { foreignAlias: Tags , class: Post , refClass: PostTag }
+
+PostCategory:
+  columns:
+    post_id:      { type: integer(8) ,  primary: true }
+    category_id:  { type: integer(8) ,  primary: true }
+  relations:
+    Post:     {   foreignAlias: PostCategorys }
+    Category: {   foreignAlias: PostCategorys }
+
+PostTag:
+  columns:
+    post_id:      { type: integer(8) ,  primary: true }
+    tag_id:       { type: integer(8) ,  primary: true }
+  relations:
+    Post:     {   foreignAlias: PostTags }
+    Tag:      {   foreignAlias: PostTags }
+
+
+Category:
+  columns:
+    id:                   { type: integer(8), autoincrement: true, primary: true }
+    name:                 { type: string(150), notnull: true }
+    description:          { type: string(1000), notnull: false }
+  relations:
+    Posts: { foreignAlias: Categories , class: Post , refClass: PostCategory }
+
+
+sfGuardUser:
+  actAs: [Timestampable]
+  columns:
+    first_name: string(255)
+    last_name: string(255)
+    email_address:  { type: string(255) ,notnull: false, unique: false }
+    username:       { type: string(128) ,notnull: true ,unique: true }
+    algorithm:      { type: string(128) , default: sha1 , notnull: true }
+    salt: string(128)
+    password:       { type: string(128),   notnull: true}
+    is_active:      { type: boolean , default: 1 } 
+    is_super_admin: { type: boolean , default: false}
+    last_login:     { type: timestamp }
+  indexes: 
+    is_active_idx:  { fields: [is_active] }
+  relations:
+    Groups:       { class: sfGuardGroup , local: user_id , foreign: group_id ,refClass: sfGuardUserGroup, foreignAlias: Users }
+    Permissions:  { class: sfGuardPermission, local: user_id ,foreign: permission_id ,refClass: sfGuardUserPermission, foreignAlias: Users }
+    Comment:      { local: id ,foreign: user_id , type: one, class: Comment }
+    Post:         { local: id ,foreign: user_id , type: one, class: Post }
+    Client:       { local: id ,foreign: user_id , type: one, class: Client }
+
+Visit:
+  columns:
+    id:            { type: integer(8), autoincrement: true, primary: true }
+    ip:            { type: string(150), notnull: true }
+    date:          { type: date, notnull: false }
+    post_id:       { type: integer(8), notnull: true }
+  relations:
+    Post:
+      foreignAlias: Posts
+
+Client:
+  columns:
+    id:               { type: integer(8), autoincrement: true, primary: true }
+    first_name:       { type: string(150), notnull: true }
+    last_name:        { type: string(150), notnull: true }
+    email_address:    { type: string(150), notnull: true }
+    address:          { type: string(150), notnull: true }
+    number:           { type: string(8), notnull: true }
+    city:             { type: string(150), notnull: true }
+    commune:          { type: string(150), notnull: true }
+    username:         { type: string(150), notnull: true }
+    password:         { type: string(150), notnull: true }
+    user_id:          { type: integer(8), notnull: true }
+    user_type:        { type: enum, values: ['Web','Blog', 'Web-Blog']}

@@ -1,0 +1,226 @@
+body {
+    background: #ededed;
+    width: 800px;
+    margin: 40px auto 100px;
+}
+a {
+    color: #66F;
+    text-decoration: none;
+    outline: none;
+}
+.post {
+    height: 600px;
+    margin: 20px 0;
+    padding: 5px 20px;
+    background: #fff;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, .3);
+    -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, .3);
+}
+#comments {
+    height: 1000px;
+    margin: 20px 0;
+    padding: 5px 20px;
+    background: #fff;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, .3);
+    -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, .3);
+}
+#reply {
+    height: 800px;
+    margin: 20px 0;
+    padding: 5px 20px;
+    background: #fff;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, .3);
+    -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, .3);
+}
+#nav-dock {
+    position: fixed;
+    right: 15px;
+    top: 35%;
+}
+#nav-dock a {
+    display: block;
+    padding: 3px 10px;
+    margin: 3px 0;
+    background: #666;
+    color: #fff;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, .3);
+    -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, .3);
+}
+#nav-dock a:hover {
+    background: #000;
+}
+#nav-dock #next {
+    margin-bottom: 10px;
+}
+h1.underline {
+    background: url("http://1.bp.blogspot.com/_hljKDuw-cxQ/SN6oWkCGiKI/AAAAAAAAIBM/N9y_nnEW_yQ/s400/h1-underline.png") bottom left no-repeat;
+    font-family: georgia, "times new roman", times, serif;
+    font-weight: lighter;
+
+}
+h1.underline a, #slug h1.underline{
+    text-decoration: none;    
+}
+
+#comment{
+    margin-top: 50px; 
+}
+.comment-content{
+    margin-top: 30px; 
+}
+#comment-new p.warning {
+    background: url("../images/warning.png") no-repeat scroll 0 0 transparent;
+    clear: left;
+}
+#comment-new p.warning {
+    color: #999999;
+    font-size: 0.7em;
+    padding: 0 0 0 23px;
+    width: 480px;
+    text-align: justify; 
+}
+#comment-new p.title {
+    color: #999999;
+    font-size: 1.1em;
+    padding: 0 0 0 23px;
+    width: 200px;
+    text-align: justify;
+}
+#comment_comment{
+    width: 500px;
+}
+#image-user{
+    width: 70px;
+    height: 70px;
+}
+label.error { 
+    background: url("../images/warning.png") no-repeat scroll 0 0 transparent;
+    float: none; 
+    color: red; 
+    padding-left: 1.5em; 
+    vertical-align: top;    
+}
+#comment-new table { 
+    width: 500px;
+}
+
+
+#wrapper {
+    width: 1024px;
+    margin: 0 auto;
+
+}
+#header {
+    float: none;
+    width: 100%;
+    height: 150px;
+    position: relative;
+    background-image: url("../images/banner_proyectos.jpg");
+    background-repeat: no-repeat-x;
+}
+#menu{
+    margin: 0 auto;
+    width: 250px;
+    float: left;
+}
+#navigation {
+    float: left;
+    width: 20%;
+    height: 100%;
+    position: absolute;
+    padding-right: 30px;
+}
+#footer {
+    clear: both;
+    width: 100%;
+    height: 150px;
+    position: relative;
+    background-color: #555555;
+    margin-top: 200px;
+}
+.error{
+    background: url("../images/error.png") no-repeat scroll 0 0 #FFCCCC;
+    border: 1px solid #FF0000;
+    border-radius: 5px 5px 5px 5px;
+    color: #000000;
+    float: left;
+    font-family: arial;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: normal;
+    margin: 3px 0;
+    padding: 10px 8px 7px 27px;
+    width: 97%;
+}
+#content{
+    width: 750px;
+    float: right;
+}
+#twitter{
+    width: 100px;
+    float: right;
+}
+#facebook{
+    width: 100px;
+    float: left;
+}
+
+
+/********seguidores de twitter*******/
+div.twitter-friends{}
+div.tf-header{
+    border:silver 1px solid;
+    overflow:hidden;
+    margin:0 0 1px 0;
+    background-color:#0B243B; /* Color de fondo del título */
+}
+div.tf-header img{
+    margin:1px;
+    float:left;
+    width:36px;
+    height:36px;
+    border:0;
+}
+div.tf-header h2{
+    line-height:32px;
+    font-weight:bolder;
+    display:block;
+    margin:3px;
+    padding-left:5px;
+    float:left;
+    font-size:14px;
+    letter-spacing:.1em ;
+    color:#FFF; /* Color del texto */
+}
+div.tf-users{
+    height:180px; /* Alto del gadget */
+    border:silver 1px solid;
+    overflow:hidden;
+    background-color:#eaeaea; /* Color de fondo del gadget */
+}
+div.tf-users a{
+    display:block;
+    float:left;
+}
+div.tf-users img{ }
+div.tf-info{
+    text-align:right;
+    display:none;
+}
+#friends{
+    float: right;
+    width: 90%;
+}
+/***************/
+#follow-twitter{
+    float: right;
+    
+}

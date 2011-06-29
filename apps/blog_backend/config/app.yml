@@ -1,0 +1,112 @@
+# You can find more information about this file on the symfony website:
+# http://www.symfony-project.org/reference/1_4/en/11-App
+
+# default values
+all:
+  sf_guard_plugin:
+    success_signin_url:      /adminBlog
+    success_signout_url:     /adminBlog         
+  title: 
+    login: Administrador Blog
+  post:
+    content_long: 200
+    
+  mp_reality_admin:
+    bloc00: [[Administrador,Editor]]
+    bloc01: [[Administrador,Editor]]
+    bloc02: [[Administrador,Editor]]
+    bloc03: [[Autor, Colaborador]]
+    bloc04: [[Autor, Colaborador]]
+    bloc05: [[Autor, Colaborador]]
+    bloc10: [[Administrador, Editor, Autor, Colaborador]]
+    bloc11: [[Administrador, Editor, Autor, Colaborador]]
+    bloc12: [[Administrador, Editor, Autor, Colaborador]]
+    bloc20: [[Administrador, Editor]]
+    bloc21: [[Administrador, Editor]]
+ 
+    #dossier ou récupérer les css et js
+    web_dir:        /mpRealityAdminPlugin
+    image_dir:      /images/
+
+    # utiliser la version jquery fournit avec le plugin
+    use_jquery:     true
+    
+    # utiliser la feuille reset.css
+    css_reset:      false
+
+    max_per_page: ['3','5','10', '20', '50', '100', '∞']
+
+    #dashboard
+    categories:
+      Bloc1:
+        label: Post
+        class: medium
+        items:
+          Borrador:
+            url:          /adminBlog/post?state=dr
+            image:        draft.png
+            badge:
+              model: Post
+              table_method: getDraft
+          Publicados:
+            url:          /adminBlog/post?state=pu
+            image:        publish.png
+            badge:
+              model: Post
+              table_method: getPublished
+          Pendientes:
+            url:          /adminBlog/post?state=pe
+            image:        pending.png
+            badge:
+              model: Post
+              table_method: getPending
+          Tus Borradores:
+            url:          /adminBlog/post?state=dr
+            image:        draft.png
+            badge:
+              model: Post
+              table_method: getDraftUser
+          Tus Publicaciones:
+            url:          /adminBlog/post?state=pu
+            image:        publish.png
+            badge:
+              model: Post
+              table_method: getPublishedUser
+          Tus Pendientes:
+            url:          /adminBlog/post?state=pe
+            image:        pending.png
+            badge:
+              model: Post
+              table_method: getPendingUser
+      Bloc2:
+        label: Comentarios
+        class: medium
+        items:
+          Pendientes:
+            url:          /adminBlog/comment?state=pe
+            image:        comment.png
+            badge:
+              model: Comment
+              table_method: getCommentPending
+          Publicados:
+            url:          /adminBlog/comment?state=pu
+            image:        comment.png
+            badge:
+              model: Comment
+              table_method: getCommentPublic
+          Comentarios de Hoy:
+            url:          /adminBlog/comment?state=now
+            image:        comment.png
+            badge:
+              model: Comment
+              table_method: getCommentDay
+      Bloc3:
+        label: Estadísticas
+        class: medium
+        items:
+          Visitas:
+            url:          /adminBlog/comment/statisticsPost
+            image:        chart.png
+          Comentarios:
+            url:          /admin/comment/statisticsComment
+            image:        chart.png

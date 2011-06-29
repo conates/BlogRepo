@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xliff PUBLIC "-//XLIFF//DTD XLIFF//EN" "http://www.oasis-open.org/committees/xliff/documents/xliff.dtd">
+<xliff version="1.0">
+  <file source-language="ES" target-language="es" datatype="plaintext" original="messages" product-name="messages">
+    <header/>
+    <body>
+      <trans-unit>
+        <source>sign in</source>
+        <target>login</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Username</source>
+        <target>Nombre de Usuario</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Remember</source>
+        <target>Recordar cuenta</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Forgot your password?</source>
+        <target>Olvidaste tu contraseña?</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Export</source>
+        <target>Exportar</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Exporter</source>
+        <target>Exporter</target>
+      </trans-unit>
+      
+    </body>
+  </file>
+</xliff>  
+      

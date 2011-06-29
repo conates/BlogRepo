@@ -1,0 +1,34 @@
+generator:
+  class: mpRealtyAdminDoctrineGenerator
+  param:
+    model_class:           Tag
+    theme:                 mpReality
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          tag
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: 
+        _new: 
+          credentials: [[Administrador,Editor]]
+        _edit: 
+          credentials: [[Administrador,Editor]]
+        _delete: 
+          credentials: [[Administrador]]
+      fields:  
+        name:           { label: Nombre}
+        description:    { label: Descripción}
+        posts_list:      { label: Lista de Post}
+      list:    
+        title: Lista de Tags
+      filter:  ~
+      form:    ~
+      edit:    
+        title: Editar Tag %%name%%
+      new:     
+        title: Nuevo Tag
+      show:    ~
