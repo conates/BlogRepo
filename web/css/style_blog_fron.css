@@ -9,9 +9,8 @@ a {
     outline: none;
 }
 .post {
-    height: 600px;
     margin: 20px 0;
-    padding: 5px 20px;
+    padding: 5px 20px 100px;
     background: #fff;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
@@ -223,4 +222,8 @@ div.tf-info{
 #follow-twitter{
     float: right;
     
+}
+#both{
+    clear: both;
+    position: relative;
 }

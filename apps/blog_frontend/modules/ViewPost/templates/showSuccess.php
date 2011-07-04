@@ -7,42 +7,47 @@
     });
 </script>
 
+
 <div id='blog-content'>
-    <div id="slug">
-        <H1 class="underline"><?php echo $post->getSlug(); ?></h1>
-        <input type="hidden" id="id" name="comment[post_id]" value="<?php echo $post->getId(); ?>">
+    <div class="post">
+        <div id="slug">
+            <H1 class="underline"><?php echo $post->getSlug(); ?></h1>
+            <input type="hidden" id="id" name="comment[post_id]" value="<?php echo $post->getId(); ?>">
+        </div>
+
+        <div id="content-content">
+            <?php echo html_entity_decode($post->getContent()); ?>
+        </div>
+        <div id="content-date">
+            <small> <?php echo date('Y-m-d', strtotime($post->getDate())); ?> </small>
+        </div>
     </div>
 
-    <div id="content-content">
-        <?php echo html_entity_decode($post->getContent()); ?>
-    </div>
-    <div id="content-date">
-        <small> <?php echo date('Y-m-d', strtotime($post->getDate())); ?> </small>
-    </div>
-</div>
 
-<div>
-    <script src="http://platform.twitter.com/widgets.js" type="text/javascript"></script>
-    <a href="http://twitter.com/share" class="twitter-share-button"
-       data-url="http://blog.recytics.com/index.php/blog/ver_post/<?php echo $post->getSlug() ?>.html"
-       data-via="conates"
-       data-text="Check this out!s"
-       data-related="conates_dev:The Javascript API"
-       data-count="vertical"
-       data-counturl="http://blog.recytics.com/index.php/blog/ver_post/<?php echo $post->getSlug() ?>.html">Tweet</a>
+    <div id="twitter">
+        <script src="http://platform.twitter.com/widgets.js" type="text/javascript"></script>
+        <a href="http://twitter.com/share" class="twitter-share-button"
+           data-url="http://blog.recytics.com/index.php/blog/ver_post/<?php echo $post->getSlug() ?>.html"
+           data-via="conates"
+           data-text="Check this out!s"
+           data-related="conates_dev:The Javascript API"
+           data-count="vertical"
+           data-counturl="http://blog.recytics.com/index.php/blog/ver_post/<?php echo $post->getSlug() ?>.html">Tweet</a>
+    </div>
+    <div id="facebook">
+        <div id="fb-root"> </div>
+        <script src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script>
+        <fb:like href="http://blog.recytics.com/index.php/blog/ver_post/<?php echo $post->getSlug() ?>.html" 
+                 send="true" 
+                 width="450" 
+                 show_faces="true" 
+                 colorscheme="dark" 
+                 font=""
+                 layout="box_count">
+        </fb:like>
+    </div>
 </div>
-<div>
-    <div id="fb-root"> </div>
-    <script src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script>
-    <fb:like href="http://blog.recytics.com/index.php/blog/ver_post/<?php echo $post->getSlug() ?>.html" 
-             send="true" 
-             width="450" 
-             show_faces="true" 
-             colorscheme="dark" 
-             font=""
-             layout="box_count">
-    </fb:like>
-</div>
+<div id="both"></div>
 <div id="comment-new">
 
 
